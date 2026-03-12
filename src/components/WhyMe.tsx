@@ -30,7 +30,7 @@ const reasons = [
 
 export function WhyMe() {
   return (
-    <section id="why-me" className="py-24 md:py-32 bg-zinc-950 relative border-t border-white/5">
+    <section id="why-me" className="py-24 md:py-32 bg-slate-950 relative border-t border-slate-800/50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -40,21 +40,21 @@ export function WhyMe() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 text-balance">
-              Pourquoi <span className="text-brand-red">travailler</span> avec moi ?
+              Pourquoi <span className="text-brand-primary">travailler</span> avec moi ?
             </h2>
-            <p className="text-zinc-400 text-lg leading-relaxed mb-12">
+            <p className="text-slate-400 text-lg leading-relaxed mb-12">
               Faire appel à Blonde Codeur, c'est choisir un partenaire impliqué dans la réussite de votre entreprise. Je combine expertise technique et vision stratégique pour créer des outils qui font la différence.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {reasons.map((reason, index) => (
                 <div key={index} className="flex gap-4">
-                  <div className="mt-1 text-brand-red shrink-0">
+                  <div className="mt-1 text-brand-primary shrink-0">
                     <CheckCircle2 size={24} />
                   </div>
                   <div>
                     <h3 className="text-white font-semibold text-lg mb-2">{reason.title}</h3>
-                    <p className="text-sm text-zinc-500 leading-relaxed">{reason.desc}</p>
+                    <p className="text-sm text-slate-500 leading-relaxed">{reason.desc}</p>
                   </div>
                 </div>
               ))}
@@ -68,8 +68,8 @@ export function WhyMe() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="aspect-square rounded-full overflow-hidden relative border-8 border-zinc-900">
-              <div className="absolute inset-0 bg-brand-red/20 mix-blend-overlay z-10" />
+            <div className="aspect-square rounded-full overflow-hidden relative border-8 border-slate-900">
+              <div className="absolute inset-0 bg-brand-primary/20 mix-blend-overlay z-10" />
               <img
                 src="https://picsum.photos/seed/developer-focus/800/800"
                 alt="Développeur concentré"
@@ -79,7 +79,7 @@ export function WhyMe() {
             </div>
             
             {/* Decorative Elements */}
-            <div className="absolute top-10 right-10 w-20 h-20 bg-brand-red/10 rounded-full blur-2xl" />
+            <div className="absolute top-10 right-10 w-20 h-20 bg-brand-primary/10 rounded-full blur-2xl" />
             <div className="absolute bottom-10 left-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
           </motion.div>
         </div>

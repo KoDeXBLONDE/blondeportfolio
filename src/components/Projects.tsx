@@ -24,7 +24,7 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-24 md:py-32 bg-zinc-950 relative border-t border-white/5">
+    <section id="projects" className="py-24 md:py-32 bg-slate-950 relative border-t border-slate-800/50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
           <div className="max-w-2xl">
@@ -34,14 +34,14 @@ export function Projects() {
               viewport={{ once: true }}
               className="text-3xl md:text-5xl font-display font-bold mb-6"
             >
-              Mes réalisations <span className="text-brand-red">récentes</span>.
+              Mes réalisations <span className="text-brand-primary">récentes</span>.
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-zinc-400 text-lg"
+              className="text-slate-400 text-lg"
             >
               Découvrez comment j'ai aidé d'autres entreprises à se transformer et à atteindre leurs objectifs grâce au digital.
             </motion.p>
@@ -51,7 +51,7 @@ export function Projects() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             href="#contact"
-            className="inline-flex items-center gap-2 text-white font-medium hover:text-brand-red transition-colors whitespace-nowrap"
+            className="inline-flex items-center gap-2 text-white font-medium hover:text-brand-primary transition-colors whitespace-nowrap"
           >
             Voir tous les projets <ArrowUpRight size={20} />
           </motion.a>
@@ -65,24 +65,23 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="group cursor-pointer"
+              className="group cursor-pointer rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all"
             >
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-zinc-900">
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10" />
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-all z-10" />
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute top-4 right-4 w-12 h-12 bg-white text-black rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 z-20">
-                  <ArrowUpRight size={24} />
+                <div className="absolute top-4 left-4 z-20 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-xs font-medium border border-slate-700 text-brand-primary">
+                  {project.category}
                 </div>
               </div>
-              <div>
-                <p className="text-brand-red font-medium text-sm mb-2 uppercase tracking-wider">{project.category}</p>
-                <h3 className="text-2xl font-semibold text-white mb-3 group-hover:text-zinc-300 transition-colors">{project.title}</h3>
-                <p className="text-zinc-500 leading-relaxed">{project.desc}</p>
+              <div className="p-6">
+                <h3 className="text-2xl font-semibold text-white mb-3 group-hover:text-brand-primary transition-colors">{project.title}</h3>
+                <p className="text-slate-400 leading-relaxed">{project.desc}</p>
               </div>
             </motion.div>
           ))}
