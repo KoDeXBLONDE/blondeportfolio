@@ -3,7 +3,7 @@ import { MessageCircle } from 'lucide-react';
 
 export function CTA() {
   return (
-    <section id="contact" className="py-24 md:py-32 bg-slate-950 relative overflow-hidden border-t border-slate-800/50">
+    <section id="contact" className="py-24 md:py-32 bg-transparent relative overflow-hidden border-t border-slate-800/50">
       {/* Background Pattern */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-brand-primary/10 rounded-full blur-[100px] -z-10"></div>
 
@@ -24,7 +24,7 @@ export function CTA() {
           transition={{ delay: 0.1 }}
           className="text-slate-400 text-xl mb-12 max-w-2xl mx-auto"
         >
-          Discutons de vos objectifs et voyons comment je peux vous aider à les atteindre. Consultation gratuite et sans engagement.
+          Discutons de vos objectifs et voyons comment nous pouvons vous aider à les atteindre. Consultation gratuite et sans engagement.
         </motion.p>
 
         <motion.div

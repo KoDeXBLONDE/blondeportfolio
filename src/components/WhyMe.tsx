@@ -1,5 +1,6 @@
-import { motion } from 'motion/react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { CheckCircle2 } from 'lucide-react';
+import { useRef } from 'react';
 
 const reasons = [
   {
@@ -8,7 +9,7 @@ const reasons = [
   },
   {
     title: "Approche Business",
-    desc: "Je ne suis pas qu'un développeur. Je pense conversion, ROI et croissance avant d'écrire du code."
+    desc: "Nous ne sommes pas que des développeurs. Nous pensons conversion, ROI et croissance avant d'écrire du code."
   },
   {
     title: "Design Moderne",
@@ -16,7 +17,7 @@ const reasons = [
   },
   {
     title: "Technologies Innovantes",
-    desc: "J'utilise les outils les plus performants (React, Tailwind, IA) pour des solutions rapides et sécurisées."
+    desc: "Nous utilisons les outils les plus performants (React, Tailwind, IA) pour des solutions rapides et sécurisées."
   },
   {
     title: "Accompagnement Stratégique",
@@ -29,8 +30,15 @@ const reasons = [
 ];
 
 export function WhyMe() {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
+
   return (
-    <section id="why-me" className="py-24 md:py-32 bg-slate-950 relative border-t border-slate-800/50">
+    <section id="why-me" className="py-24 md:py-32 bg-transparent relative border-t border-slate-800/50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -40,10 +48,10 @@ export function WhyMe() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 text-balance">
-              Pourquoi <span className="text-brand-primary">travailler</span> avec moi ?
+              Pourquoi <span className="text-brand-primary">travailler</span> avec nous ?
             </h2>
             <p className="text-slate-400 text-lg leading-relaxed mb-12">
-              Faire appel à Blonde Codeur, c'est choisir un partenaire impliqué dans la réussite de votre entreprise. Je combine expertise technique et vision stratégique pour créer des outils qui font la différence.
+              Faire appel à Blonde Codeur, c'est choisir un partenaire impliqué dans la réussite de votre entreprise. Nous combinons expertise technique et vision stratégique pour créer des outils qui font la différence.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -62,6 +70,7 @@ export function WhyMe() {
           </motion.div>
 
           <motion.div
+            ref={ref}
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -70,7 +79,8 @@ export function WhyMe() {
           >
             <div className="aspect-square rounded-full overflow-hidden relative border-8 border-slate-900">
               <div className="absolute inset-0 bg-brand-primary/20 mix-blend-overlay z-10" />
-              <img
+              <motion.img
+                style={{ y, scale: 1.15 }}
                 src="https://picsum.photos/seed/developer-focus/800/800"
                 alt="Développeur concentré"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"

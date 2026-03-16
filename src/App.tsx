@@ -12,10 +12,12 @@ import { Process } from './components/Process';
 import { WhyMe } from './components/WhyMe';
 import { CTA } from './components/CTA';
 import { Footer } from './components/Footer';
+import { Background } from './components/Background';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50 font-sans selection:bg-brand-primary/30 selection:text-orange-200">
+    <div className="min-h-screen bg-transparent text-slate-50 font-sans selection:bg-brand-primary/30 selection:text-orange-200 relative">
+      <Background />
       <Navbar />
       <main>
         <Hero />

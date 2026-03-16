@@ -31,8 +31,17 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-24 md:py-32 bg-slate-900/50 relative border-t border-slate-800/50">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="services" className="py-24 md:py-32 relative border-t border-slate-800/50 overflow-hidden">
+      {/* Background Image for Innovation */}
+      <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-fixed opacity-60"
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop')` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/20 to-slate-950" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -49,7 +58,7 @@ export function Services() {
             transition={{ delay: 0.1 }}
             className="text-slate-400 text-lg"
           >
-            Je transforme vos défis complexes en systèmes digitaux simples, élégants et performants.
+            Nous transformons vos défis complexes en systèmes digitaux simples, élégants et performants.
           </motion.p>
         </div>
 
@@ -57,11 +66,12 @@ export function Services() {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-brand-primary/30 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-primary/5 transition-all relative overflow-hidden"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: index * 0.1, duration: 0.5, ease: "easeOut" }}
+              whileHover={{ y: -10, transition: { duration: 0.2 } }}
+              className="group p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-brand-primary/30 shadow-lg hover:shadow-2xl hover:shadow-brand-primary/10 transition-colors relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brand-primary/10 to-transparent rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
               <div className="w-14 h-14 rounded-xl bg-slate-800 flex items-center justify-center text-brand-primary mb-6 relative z-10">

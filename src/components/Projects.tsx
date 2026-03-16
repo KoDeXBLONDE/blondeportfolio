@@ -24,7 +24,7 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-24 md:py-32 bg-slate-950 relative border-t border-slate-800/50">
+    <section id="projects" className="py-24 md:py-32 bg-transparent relative border-t border-slate-800/50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
           <div className="max-w-2xl">
@@ -34,7 +34,7 @@ export function Projects() {
               viewport={{ once: true }}
               className="text-3xl md:text-5xl font-display font-bold mb-6"
             >
-              Mes réalisations <span className="text-brand-primary">récentes</span>.
+              Nos réalisations <span className="text-brand-primary">récentes</span>.
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -43,7 +43,7 @@ export function Projects() {
               transition={{ delay: 0.1 }}
               className="text-slate-400 text-lg"
             >
-              Découvrez comment j'ai aidé d'autres entreprises à se transformer et à atteindre leurs objectifs grâce au digital.
+              Découvrez comment nous avons aidé d'autres entreprises à se transformer et à atteindre leurs objectifs grâce au digital.
             </motion.p>
           </div>
           <motion.a
@@ -63,9 +63,10 @@ export function Projects() {
               key={index}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="group cursor-pointer rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: index * 0.1, duration: 0.6, ease: "easeOut" }}
+              whileHover={{ y: -10, transition: { duration: 0.2 } }}
+              className="group cursor-pointer rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-slate-700 transition-colors shadow-lg hover:shadow-2xl"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-all z-10" />
